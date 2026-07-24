@@ -1,7 +1,7 @@
 import { chromium } from "@playwright/test";
 
 export default async function handler(req, res) {
-  const playerId = 2544; // LeBron James
+  const playerId = 2544;
   const season = req.query.season || "2025-26";
 
   const url = `https://stats.nba.com/stats/playergamelog?PlayerID=${playerId}&Season=${season}&SeasonType=Regular+Season`;
@@ -45,6 +45,7 @@ export default async function handler(req, res) {
     }));
 
     res.status(200).json({ season, logs });
+
   } catch (err) {
     res.status(500).json({
       error: "Cloudflare-proof fetch failed",
