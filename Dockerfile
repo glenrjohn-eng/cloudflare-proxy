@@ -30,12 +30,11 @@ RUN apt-get update && apt-get install -y \
     libxshmfence1 \
     && rm -rf /var/lib/apt/lists/*
 
-# Install app
 WORKDIR /app
+
 COPY package.json .
 RUN npm install
 
 COPY . .
 
-# Start server
 CMD ["npm", "start"]
