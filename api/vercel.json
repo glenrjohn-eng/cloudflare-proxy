@@ -1,8 +1,10 @@
 {
-  "version": 2,
+  "buildCommand": "",
+  "devCommand": "",
+  "installCommand": "",
   "functions": {
     "api/*.js": {
-      "runtime": "nodejs18.x",
+      "runtime": "nodejs20.x",
       "memory": 1024,
       "maxDuration": 30
     }
